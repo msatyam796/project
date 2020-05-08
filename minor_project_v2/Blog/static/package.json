@@ -1,0 +1,14 @@
+{
+  "name": "web-py-log",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sasss": "node-sass sass/main.scss blog/main.css -w"
+  },
+  "author": "shiv",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  }
+}

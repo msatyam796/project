@@ -1,0 +1,248 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'blog/icon-font.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'blog/main.css' %}">
+
+    <title>Tech-BLogs</title>
+</head>
+<body>
+    <div class="navigation-main">
+        <input type="checkbox"  class="navigation-main__checkbox" id="nav-toggle">
+        <label for="nav-toggle" class="navigation-main__button">
+            <span class="navigation-main__icon">&nbsp;</span>
+        </label>
+        <div class="navigation-main__background">&nbsp;</div>
+        <nav class="navigation-main__nav">
+            <ul class="navigation-main__list">
+                <li class="navigation-main__item"><a class="navigation-main__link" href="#">Home</a></li>
+                <li class="navigation-main__item"><a class="navigation-main__link" href="#">All Blogs</a></li>
+                <li class="navigation-main__item"><a class="navigation-main__link" href="#">Profile</a></li>
+                <li class="navigation-main__item"><a class="navigation-main__link" href="#">Contact</a></li>
+                <li class="navigation-main__item"><a class="navigation-main__link" href="#">About Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <ul class="side-links">
+            <li><a href="#"><ion-icon name="logo-instagram" class="side__icon--insta"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-facebook" class="side__icon--facebook"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="logo-github" class="side__icon--git"></ion-icon></a></li>
+    </ul>
+
+
+
+    <header class="header">
+        <div class="header__logo-box">
+            <div class="header__logo">
+                <ion-icon class="logo" name="code-slash"></ion-icon>
+            </div>
+        </div>
+        <div class="header__text-box">
+            <h1 class="heading-primary">
+                <span class="heading-primary--main">TechBLogs</span>
+                <span class="heading-primary--sub">Explore &dash; Technology</span>
+            </h1>
+            <a href="{% url 'blog-home' %}" class="btn btn--white btn--animated">take me inside</a>
+        </div>
+    </header>
+    <main>
+        <section class="section-about">
+            <div class="u-text-center u-margin-bottom">
+                <h2 class="heading-secondary">
+                    feel the words
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-1-of-2 about-left">
+                    <figure class="about__img-box">
+                        <img class="about__img" src="{% static 'blog/img/social.svg' %}" alt="about-img">
+                    </figure>
+                </div>
+                <div class="col-1-of-2 about-right">
+                    <h3 class="heading-tertiary">write what you love the most</h3>
+                    <div class="about__text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolor, recusandae perferendis similique harum quae ipsam non sapiente totam corrupti eos ut dolores in temporibus mollitia officiis cum fugiat nobis?
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-features">
+
+            <div class="row">
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-world"></i>
+                        <h3 class="heading-tertiary">
+                            create posts
+                        </h3>
+                        <div class="feature-box__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, adipisci.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, nemo.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-compass"></i>
+                        <h3 class="heading-tertiary">
+                            make profile
+                        </h3>
+                        <div class="feature-box__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, adipisci.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, nemo.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-map"></i>
+                        <h3 class="heading-tertiary">
+                            learn new
+                        </h3>
+                        <div class="feature-box__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, adipisci.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, nemo.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1-of-4">
+                    <div class="feature-box">
+                        <i class="feature-box__icon icon-basic-heart"></i>
+                        <h3 class="heading-tertiary">
+                            Secure login
+                        </h3>
+                        <div class="feature-box__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, adipisci.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, nemo.
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="section-subscribe">
+            <div class="row">
+                <div class="col-1-of-2">
+                    <figure class="subscribe__img-box">
+                        <img src="{% static 'blog/img/girl_laptop.svg' %}" alt="" class="subscribe__img">
+                    </figure>
+                </div>
+                <div class="col-1-of-2">
+                    <h3 class="heading-tertiary">Take me inside</h3>
+                    <p class="subscribe__text">
+                        find the latest trending Technology and lifestyle blogs and learn something new.
+                    </p>
+                    <a href="" class="btn btn-subscribe">take me inside</a>
+                </div>
+            </div>
+        </section>
+
+
+        
+    </main>
+    <footer class="footer">
+    <div class="row">
+                <div class="col-1-of-2">
+                     <ul class="footer__nav-list">
+                    <li class="footer__nav-item"><a href="" class="footer__link">home</a></li>
+                    <li class="footer__nav-item"><a href="" class="footer__link">service</a></li>
+                    <li class="footer__nav-item"><a href="" class="footer__link">contact</a></li>
+                </ul>
+                </div>
+                <div class="col-1-of-2">
+                     <ul class="social-links">
+                        <li><a href="#"><ion-icon name="logo-instagram" class="footer__icon--insta"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-facebook" class="footer__icon--facebook"></ion-icon></a></li>
+                        <li><a href="#"><ion-icon name="logo-github" class="footer__icon--git"></ion-icon></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright"> <p>2020 &copy; all rights reserved</p></div>
+       
+    </footer>
+
+<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+</body>
+</html>
+
+
+<!-- 
+<section class="grid-test">
+            <div class="row">
+                <div class="col-1-of-2">
+                    col-1-of-2
+                </div>
+                <div class="col-1-of-2">
+                    col-1-of-2
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-1-of-3">
+                    col-1-of-3
+                </div>
+                <div class="col-1-of-3">
+                    col-1-of-3
+                </div>
+                <div class="col-1-of-3">
+                    col-1-of-3
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-1-of-3">
+                    col-1-of-3
+                </div>
+                <div class="col-2-of-3">
+                    col-2-of-3
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-4">
+                    col-1-of-4
+                </div>
+                <div class="col-1-of-4">
+                    col-1-of-4
+                </div>
+                <div class="col-1-of-4">
+                    col-1-of-4
+                </div>
+                <div class="col-1-of-4">
+                    col-1-of-4
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-4">
+                    col-1-of-4
+                </div>
+                <div class="col-1-of-4">
+                    col-1-of-4
+                </div>
+            
+                <div class="col-2-of-4">
+                    col-2-of-4
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-1-of-4">
+                    col-1-of-4
+                </div>
+                <div class="col-3-of-4">
+                    col-3-of-4
+                </div>
+            
+            </div>
+        </section>
+ -->

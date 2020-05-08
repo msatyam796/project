@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+
+<section class="section-profile">
+        <div class="profile">
+            <div class="profile__hero">
+                <div class="profile__pic">
+                    <img class="profile__pic-user" src="{{  user.profile.image.url }}" alt="profile">
+                </div>
+                <h2 class="profile__username">
+                    {{ user.username }}
+                </h2>
+            </div>
+        </div>
+</section>
+<section class="profile-details">
+    <div class="row">
+       <form action="" method="POST" class="profile-details__form" enctype="multipart/form-data">
+           <h2 class="heading-secondary">
+                Update Profile
+           </h2>
+        {% csrf_token %}
+         <div class="form__group">
+               {{ u_form|crispy }}
+               {{ p_form|crispy }}
+         </div>
+         <div class="form__group">
+                 <button type="submit" class="btn btn--green">Submit</button>
+         </div>                   
+        </form> 
+    </div>
+</section>
+
+{% endblock content %}

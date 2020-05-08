@@ -1,0 +1,70 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+    <header>
+        <nav class="navigation">
+            <ul class="navigation__list nav-left">
+                <li><a href="{% url 'home' %}" class="navigation__list--item">Home</a></li>
+                <li><a href="{% url 'blog-home' %}" class="navigation__list--item">All BLogs</a></li>
+                <li><a href="{% url 'blog-about' %}" class="navigation__list--item">About</a></li>
+            </ul>
+            <ul class="navigation__list nav-right">
+                {% if user.is_authenticated %}
+                <li><a class="navigation__list--item" href="{% url 'profile' %}">profile</a></li>
+                <li><a class="navigation__list--item" href="{% url 'logout' %}">logout</a></li>
+                {% else %}
+                <li><a class="navigation__list--item" href="{% url 'login' %}">Login</a></li>
+                <li><a class="navigation__list--item" href="{% url 'register' %}">Register</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    <main >
+        <section class="section-blog post-detail">
+            <div class="row">          
+                    <div class="col-4-of-4">
+                        <article class="post">
+                            <div class="col-1-of-4">
+                                <img src="{{ object.author.profile.image.url }}" alt="" class="post__img-icon">
+                                <div class="post__body">
+                                    <div class="post__meta-data">
+                                        <a class="post__author " href="{% url 'user-posts' post.author %}">{{ object.author }}</a>
+                                        <small class="post__date">{{ object.date_posted|date:"F d, Y" }}</small>
+                                    </div>
+                                    <h2 class="post__title" href="{% url 'post-detail' post.id  %}">{{ object.title }}</h2>
+                                    <p class="post__content">{{ object.content|slice:":50"  }}</p>
+                                    {% if object.author == user %}
+                                    <a href="{% url 'post-update' object.pk %}" class="btn-text u-margin-right-small"> edit </a>
+                                    <a href="{% url 'post-delete' object.pk %}" class="btn-text">delete</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="col-3-of-4">
+                                <figure class="post__img">
+                                    <img src="{{ post.image.url }}" alt="" class="post__img--item">
+                                </figure>
+                            </div>
+                        </article>
+                    </div>           
+           </div>
+           {% if is_paginated %}
+{% if page_obj.has_previous %}
+  <a href="?page=1" class="btn btn-outline-info mb-4">First</a>
+  <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-info mb-4">Previous</a>
+{% endif %}
+
+{% for num in page_obj.paginator.page_range %}
+  {% if page_obj.number == num %}
+    <a href="?page={{ num }}" class="btn btn-info mb-4">{{ num }}</a>
+  {% elif num > page_obj.number|add:'-3' and  num < page_obj.number|add:'3' %}
+    <a href="?page={{ num }}" class="btn btn-outline-info mb-4">{{ num }}</a>
+  {% endif %}
+{% endfor %}
+
+{% if page_obj.has_next %}
+  <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-info mb-4">Next</a>
+  <a href="?page={{ page_obj.paginator.num_pages }}" class="btn btn-outline-info mb-4">Last</a>
+{% endif %}
+{% endif %}
+        </section>
+    </main>
+{% endblock content %}

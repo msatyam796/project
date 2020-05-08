@@ -1,0 +1,46 @@
+.side-links{
+    padding: 1rem 1rem;
+    position:fixed;
+    top:10rem;
+    right:0;
+    background-color:rgba($color-primary, .7);
+    z-index:1000;
+    list-style:none;
+
+    li{
+            display:block;
+            &:not(:last-child){
+                margin-bottom: 2rem;
+            }
+
+            a:link,
+            a:visited{
+                text-decoration:none;
+            }
+        }
+
+        .side__icon--insta{
+            font-size:3rem;
+            transition:color .4s;
+            color: red;
+            &:hover{
+                color: #ee739f;
+             }
+        }
+        .side__icon--git{
+            font-size:3rem;
+            transition:color .4s;
+            color: #10375c;
+            &:hover{
+                color: #103755;
+             }
+        }
+        .side__icon--facebook{
+            font-size:3rem;
+            transition:color .4s;
+            color: #342ead;
+            &:hover{
+                color: #342edd;
+             }
+        }
+}

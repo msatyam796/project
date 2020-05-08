@@ -1,0 +1,32 @@
+.feature-box{
+    background-color: rgba($color-white, 0.82);
+    text-align: center;
+    padding: 2rem 3rem;
+    box-shadow: 0 .3rem .8rem rgba($color-black,0.6);
+    transition: all .4s;
+
+
+    &:hover{
+        box-shadow: 0 .5rem 2rem rgba($color-black,0.6);
+        transform: translateY(-1rem) scale(1.04);
+    }
+
+    &__icon{
+        font-size: 6rem;
+        margin: 0 auto;
+        text-align: center;
+        display: inline-block;
+        background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    &__text{
+        color: rgba($color-grey-dark,.9);
+        font-size: 1.3rem;
+        line-height: 180%;
+        word-spacing: 1px;
+        letter-spacing: 1px;
+    }
+}

@@ -1,0 +1,37 @@
+
+.header{
+    height: 90vh;
+    background-image:
+        linear-gradient(to right bottom,
+        $color-black-dark,
+        $color-black-light),
+    url(./img/hero-bg1.jpg) ;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    position: relative;
+
+
+    &__logo-box{
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+    
+    &__logo{
+        height: 35rem;
+        
+        .logo{
+        font-size:7rem;
+        color: $color-primary;
+        }
+    }
+    
+    &__text-box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}

@@ -1,0 +1,44 @@
+.navigation{
+    background-image: linear-gradient(rgba($color-primary, 0.5), rgba($color-primary-light, 0.5));
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    @include clearfix;
+
+    &__list{
+        list-style: none;
+        display: inline-block;
+
+        li{
+            display: inline-block;
+            margin: 2rem 3rem;
+        }
+
+        &--item{
+            text-decoration: none;
+            color: $color-white;
+            font-size: 1.5rem;
+            transition: color .4s;
+            position:relative;
+
+            &:hover{
+                color: rgba($color-primary-light, 0.5)
+            }
+        }
+    }
+    .nav-left{
+        float: left;
+    }
+
+    .logo{
+            font-size: 7rem;
+            color: rgba($color-white, 0.5);
+            position: absolute;
+            top: -2rem;
+            left: -5rem;
+    }
+
+    .nav-right{
+        float: right;
+    }
+}

@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<section class="section-form">
+                <div class="row">
+                    <div class="book">
+                        <div class="book__form">
+                            <form action="" method="POST" class="form">
+                            <h2 class="heading-secondary">
+                                        Register
+                                    </h2>
+                            {% csrf_token %}
+                                <div class="form__group">
+                                    {{ form|crispy }}
+                                </div>
+                                <div class="form__group">
+                                    <button type="submit" class="btn btn--green">Sign Up</button>
+                                </div>
+                                <div class="form__text-box">
+                                    <small class="text-muted">
+                                       already have an account ?
+                                        <a href="{% url 'login' %}" class="link">
+                                            Sign In
+                                        </a>
+                                    </small>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+{% endblock content %}
